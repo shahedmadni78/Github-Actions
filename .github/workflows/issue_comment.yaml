@@ -1,0 +1,13 @@
+name: Create a new issue
+
+on :
+  issues:
+    type: [opened]
+jobs:
+  comment-with-actions:
+    runs-on: ubuntu-latest
+    steps: 
+       - name: "dump github contect"
+         run: echo '${{ toJSON(github.event) }}'  | jq
+         shell: bash
+  
